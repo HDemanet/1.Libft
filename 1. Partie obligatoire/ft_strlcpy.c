@@ -6,14 +6,14 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:01:48 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 12:10:56 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:49:42 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 Description : Cette fonction copie au plus 'dstsize - 1' caractères de la chaine
 'src' dans la chaine 'dst', puis ajoute un caractère nul de fin à la fin de la
-chaine 'dst'.
+chaine 'dst'. Évite les débordements de tampon.
 Valeur renvoyée : La longueur totale de la chaine src (= nbr de caractères 
 qu'elle aurait copiés si 'dstsize' avait été suffisamment grand pour contenir 
 toute la chaine src)

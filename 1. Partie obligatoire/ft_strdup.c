@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:47:21 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 11:56:03 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:12:33 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 Description : Cette fonction permet de dupliquer une chaîne de caractères 
 existante en allouant dynamiquement de la mémoire pour la nouvelle chaine et en 
 copiant la chaine existante dans la mémoire nouvellement allouée.
-Valeur renvoyée : S'il y a suffisament de mémoire pour produire la nv chaîne,
+Valeur renvoyée : S'il y a suffisamment de mémoire pour produire la nv chaîne,
 la fonction renvoie l'adresse de la chaîne dupliquée. Dans le cas contraire, 
-un pointeur nul vous sera retourné. 
+un pointeur nul sera retourné. 
 */
 
 #include "libft.h"

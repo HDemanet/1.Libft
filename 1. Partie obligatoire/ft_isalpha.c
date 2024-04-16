@@ -6,16 +6,16 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:33:36 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 11:43:27 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:33:35 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 Description : Cette fonction permet de tester si un caractère est alphabétique 
 (= lettre présente dans ASCII) ou non. 
-Valeur renvoyée : Une valeur positive non nulle signifira qu'il s'agit bien d'un 
-caractère alpha-numérique. La valeur 0 indiquera qu'il ne s'agit pas d'un 
-caractère apha-numérique.
+Valeur renvoyée : Une valeur positive non nulle signifiera qu'il s'agit bien d'un
+caractère alphabétique. La valeur 0 indiquera qu'il ne s'agit pas d'un 
+caractère aphabétique.
 */
 
 #include "libft.h"

@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:49:11 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 18:20:39 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 12:46:20 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,52 +20,58 @@ NULL si l’allocation échoue.
 
 #include "libft.h"
 
-int	count_size(int n)
-{
-	int	i;
+#include <stdlib.h>
 
-	i = 0;
-	if (n < 0)
-		n *= -1;
-	while (n != 0)
+int	ft_number_size(int number)
+{
+	unsigned int	length;
+
+	length = 0;
+	if (number == 0)
+		return (1);
+	if (number < 0)
+		length += 1;
+	while (number != 0)
 	{
-		n /= 10;
-		i++;
+		number /= 10;
+		length++;
 	}
-	return (i);
+	return (length);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*dst;
-	int			count;
-	int			i;
-	long int	nb;
+	char			*string;
+	unsigned int	number;
+	unsigned int	length;
 
-	nb = n;
-	count = count_size(nb);
-	i = 0;
-	if (nb < 0 || count == 0)
-		count++;
-	dst = (char *)malloc((count + 1) * sizeof(char));
-	if (!dst)
+	length = ft_number_size(n);
+	string = (char *)malloc(sizeof(char) * (length + 1));
+	if (string == NULL)
 		return (NULL);
-	if (nb < 0)
+	if (n < 0)
 	{
-		nb *= -1;
-		dst[0] = '-';
-		i++;
+		string[0] = '-';
+		number = -n;
 	}
-	while (count-- > i)
+	else
+		number = n;
+	if (number == 0)
+		string[0] = '0';
+	string[length] = '\0';
+	while (number != 0)
 	{
-		dst[count] = (nb % 10) + '0';
-		nb /= 10;
+		string[length - 1] = (number % 10) + '0';
+		number = number / 10;
+		length--;
 	}
-	return (dst);
+	return (string);
 }
 
 /*int	main(void)
 {
-	printf("%s\n", ft_itoa(-123456));
+	char	*result = ft_itoa(-42);
+	printf("%s\n", result);
+	free(result);
 	return (0);
 }*/

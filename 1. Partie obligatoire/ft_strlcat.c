@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:33:11 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 12:09:38 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:11:30 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 Description : Cette fonction concaténise des chaines de manière sécurisée en 
 évitant les dépassements de tampon (en prenant en compte la taille totale du 
 tampon de dst >< 'strncat').
-Valeur renvoyée : Longueur totale de la chaine résultante après la concaténis
+Valeur renvoyée : Longueur totale de la chaine résultante après la 
+concaténisation.
 Si cela dépasse la taille max, la fonction retourne la taille totale de la chaine
 résultante avant qu'elle ne soit tronquée. 
 */

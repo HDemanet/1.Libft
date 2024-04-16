@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:34:35 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 15:30:31 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:21:35 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	size_t	finish;
 
-	if (!s)
-		return (0);
+	if (!s || start >= ft_strlen(s))
+	{
+		s2 = (char *)malloc(sizeof(char));
+		if (!s2)
+			return (NULL);
+		*s2 = '\0';
+		return (s2);
+	}
 	slen = ft_strlen(s);
-	finish = 0;
-	if (start < slen)
-		finish = slen - start;
+	finish = slen - start;
 	if (finish > len)
 		finish = len;
 	s2 = (char *)malloc(sizeof(char) * (finish + 1));
 	if (!s2)
-		return (0);
+		return (NULL);
 	ft_strlcpy(s2, s + start, finish + 1);
 	return (s2);
 }

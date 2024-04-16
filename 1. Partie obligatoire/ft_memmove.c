@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:18:12 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 11:51:44 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:02:03 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,30 @@ Valeur renvoyée : Adresse du bloc de mémoire de dst.
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	void	*dst_ptr;
 
-	i = 0;
-	if ((size_t)dst - (size_t)src < len)
+	dst_ptr = dst;
+	if ((!dst && !src) || (dst == src))
+		return (dst);
+	if (dst > src)
 	{
-		i = len - 1;
-		while (i < len)
+		while (len > 0)
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i--;
+			len--;
+			((char *)dst)[len] = ((char *)src)[len];
 		}
 	}
 	else
 	{
-		while (i < len)
+		while (len > 0)
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
+			*(char *)dst = *(char *)src;
+			dst = (char *)dst + 1;
+			src = (char *)src + 1;
+			len--;
 		}
 	}
-	return (dst);
+	return (dst_ptr);
 }
 
 /*int	main(void)
@@ -49,7 +52,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	src[] = "123456";
 	char	dst[] = "000000";
 	printf("Dst avant: %s\n", dst);
-	memmove(dst, src, 2);
-	//ft_memmove(dst, src, 2);
+	//memmove(dst, src, 2);
+	ft_memmove(dst, src, 2);
 	printf("Dst apres: %s\n", dst);
 }*/

@@ -6,7 +6,7 @@
 /*   By: hdemanet <hdemanet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:37 by hdemanet          #+#    #+#             */
-/*   Updated: 2024/04/11 11:33:11 by hdemanet         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:49:01 by hdemanet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 	signe = 1;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			signe = signe * (-1);
